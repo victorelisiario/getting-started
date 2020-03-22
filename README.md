@@ -1,2 +1,2 @@
-# getting-started
-My first project - Guessing Game
+# Jogo de Adivinhação
+Meu primeiro programa
