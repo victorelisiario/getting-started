@@ -1,10 +1,26 @@
-<meta charset="UTF-8">
 
-<h1>Jogo da Adivinhação</h1>
-<h3>Insira um número (0 ~ 10) e aperte [IR] para verificar</h3>
-<input>
-<button>IR</button>
+<html>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Jogo da Adivinhação</h1>
+    <section id="camp1">
+        <p>Para jogar, insira no campo abaixo um numero entre 0 e 10 e clique em ir</p>
+    </section>
+  
+    
+    <div id="camp2">
+        <p>O sistema irá avisar se você acertou Sua chance é de 50%</p>
+
+        <input>
+    <button>IR</button>
+</body>
 <script>
     var palpite = document.querySelector("input");
     var numerosSecretos = [];
@@ -56,3 +72,6 @@
 
     console.log(numerosSecretos);
 </script>
+</html>
+
+
