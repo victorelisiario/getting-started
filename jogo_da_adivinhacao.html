@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <html>
 
@@ -10,68 +12,17 @@
 
 <body>
     <h1>Jogo da Adivinhação</h1>
-    <section id="camp1">
-        <p>Para jogar, insira no campo abaixo um numero entre 0 e 10 e clique em ir</p>
-    </section>
-  
     
-    <div id="camp2">
-        <p>O sistema irá avisar se você acertou Sua chance é de 50%</p>
+    <p>Para jogar, insira no campo abaixo um número entre 1 e 10 e clique em IR</p>
+    <p>O sistema irá avisar se você acertou Sua chance é de 50%</p>
 
-        <input>
+    <input>
     <button>IR</button>
+
+    <script src="script.js"></script>
 </body>
-<script>
-    var palpite = document.querySelector("input");
-    var numerosSecretos = [];
 
-        // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
-    function sorteiaNumeros(){
 
-        var contadorInclui = 0;
-       
-        while (contadorInclui < 5) {
-            var numerotemp = Math.round(Math.random() * 10);
-            var existe = false;
-
-            for ( var contadorTesta = 0; contadorTesta < 5; contadorTesta++){
-                if (numerotemp == numerosSecretos[contadorTesta]) {
-                    existe = true;
-                    break;
-                }
-            }
-            
-            if (existe == false) {
-                numerosSecretos.push(numerotemp);
-                contadorInclui++;
-            }
-        }
-    }
- 
-        // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
-    function verificacao () {
-        var errou = true;
-        for (contador = 0; contador < 5; contador++) {
-            if (palpite.value == numerosSecretos[contador]){
-                alert("Você ACERTOU!!");
-                errou = false;
-                break;
-            }
-        }
-        if (errou == true){
-            alert("Você ERROU!!")
-        }
-        palpite.value = "";
-        palpite.focus();
-    }
-
-    palpite.focus();
-    sorteiaNumeros()
-    var botao = document.querySelector("button");
-    botao.onclick = verificacao;
-
-    console.log(numerosSecretos);
-</script>
 </html>
 
 
