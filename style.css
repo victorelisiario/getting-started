@@ -39,17 +39,20 @@ input {
     justify-content: space-evenly;
     text-align: center;
     border: none;
-
 }
+
+.grid {
+    display: flex;
+}
+
 button {
-    width: 495px;
+    width: 250px;
     height: 120px;
-    left: 712px;
-    top: 300px;
+
 
     background: #443F3F;
     border-radius: 16px;  
-    
+
     color: write;
     margin: 20px;
     font-size: 60px;
@@ -57,7 +60,20 @@ button {
     font-weight: bold;
     border: none;
 }
+
+img {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    margin-left: 75px ;
+}
+
+#atualizar img {
+    height:100px;
+    margin-left: 72px;
+}
+
 button:hover{
     background:  rgb(129, 121, 121);
-    width: 500px;
+
 }

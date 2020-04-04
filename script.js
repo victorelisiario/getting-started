@@ -22,6 +22,9 @@ var palpite = document.querySelector("input");
                 contadorInclui++;
             }
         }
+
+        console.log(numerosSecretos);
+
     }
  
         // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
@@ -41,9 +44,19 @@ var palpite = document.querySelector("input");
         palpite.focus();
     }
 
+        // FUNCAO PARA ESCOLHER OS NUMEROS NOVAMENTE
+        function resortear () {
+            numerosSecretos = [];
+            sorteiaNumeros();
+            
+            palpite.value = "";
+            palpite.focus();
+        }
+
     palpite.focus();
     sorteiaNumeros()
-    var botao = document.querySelector("button");
-    botao.onclick = verificacao;
+    var botaoIr = document.querySelector("button#ir");
+    botaoIr.onclick = verificacao;
+    var botaoAtualizar = document.querySelector("button#atualizar");
+    botaoAtualizar.onclick = resortear;
 
-    console.log(numerosSecretos);
