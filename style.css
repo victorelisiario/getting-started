@@ -148,6 +148,26 @@ a#titulo:hover {
     align-self: center;
 }
 
+.invalido {
+    width: 500px;
+    height: 120px;
+    background-color: #B65555;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
 .acertou {
     width: 500px;
     height: 120px;

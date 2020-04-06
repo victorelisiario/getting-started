@@ -1,4 +1,4 @@
-var palpite = document.querySelector("input");
+    var palpite = document.querySelector("input");
     var numerosSecretos = [];
 
 
@@ -24,10 +24,30 @@ var palpite = document.querySelector("input");
             .toggle("hide")
     }
 
+    function esconderInvalido () {
+        document
+            .querySelector(".invalido")
+            .classList
+            .toggle("hide")
+    }
+
+    function enfase (){
+        palpite.value = "";
+        palpite.focus();
+    }
+
+    function esconderInput () {
+        document
+            .querySelector(".input")
+            .classList
+            .toggle("hide")
+    }
+
     esconderAcertou();
     esconderErrou();
+    esconderInvalido();
 
-        // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
+            // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
     function sorteiaNumeros(){
 
         var contadorInclui = 0;
@@ -55,33 +75,50 @@ var palpite = document.querySelector("input");
  
             // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
     function verificacao () {
-        var errou = true;
-        for (contador = 0; contador < 5; contador++) {
-            if (palpite.value == numerosSecretos[contador]){
-                esconderResultado();
-                esconderAcertou();
-                setTimeout(esconderAcertou, 800);
-                setTimeout(esconderResultado, 800);
-                errou = false;
-                break;
-            }
+      
+        if (isNaN(palpite)){
+            if (palpite.value > 0 && palpite.value < 11) {
+
+                var errou = true;
+                for (contador = 0; contador < 5; contador++) {
+                    if (palpite.value == numerosSecretos[contador]){
+                        esconderResultado();
+                        esconderAcertou();
+                        setTimeout(esconderAcertou, 800);
+                        setTimeout(esconderResultado, 800);
+                        errou = false;
+                        break;
+                    }
+                }
+                
+                if (errou == true) {
+                    esconderResultado();
+                    esconderErrou();
+                    setTimeout(esconderErrou,800);
+                    setTimeout(esconderResultado, 800);   
+                }
+
+
+                palpite.value = "";
+                palpite.focus();  
+            
+            } else {
+                esconderInput();
+                esconderInvalido();
+                setTimeout(esconderInput, 800);
+                setTimeout(esconderInvalido, 800);
+                setTimeout(enfase, 800);
+            }               
         }
-        if (errou == true){
-            esconderResultado();
-            esconderErrou();
-            setTimeout(esconderErrou,800);
-            setTimeout(esconderResultado, 800);        }
-        palpite.value = "";
-        palpite.focus();
     }
+        
 
         // FUNCAO PARA ESCOLHER OS NUMEROS NOVAMENTE
         function resortear () {
             numerosSecretos = [];
             sorteiaNumeros();
             
-            palpite.value = "";
-            palpite.focus();
+            enfase();
         }
 
     palpite.focus();
@@ -91,5 +128,5 @@ var palpite = document.querySelector("input");
     var botaoAtualizar = document.querySelector("button#atualizar");
     botaoAtualizar.onclick = resortear;
 
-    
 
+    
