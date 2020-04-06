@@ -1,6 +1,32 @@
 var palpite = document.querySelector("input");
     var numerosSecretos = [];
 
+
+    // FUNCOES PARA ESCONDER A ABA DE RESPOSTA
+    function esconderResultado () {
+        document
+            .querySelector(".resultado")
+            .classList
+            .toggle("hide")
+    }
+
+    function esconderAcertou () {
+        document
+            .querySelector(".acertou")
+            .classList
+            .toggle("hide")
+    }
+
+    function esconderErrou () {
+        document
+            .querySelector(".errou")
+            .classList
+            .toggle("hide")
+    }
+
+    esconderAcertou();
+    esconderErrou();
+
         // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
     function sorteiaNumeros(){
 
@@ -27,19 +53,24 @@ var palpite = document.querySelector("input");
 
     }
  
-        // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
+            // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
     function verificacao () {
         var errou = true;
         for (contador = 0; contador < 5; contador++) {
             if (palpite.value == numerosSecretos[contador]){
-                alert("Você ACERTOU!!");
+                esconderResultado();
+                esconderAcertou();
+                setTimeout(esconderAcertou, 800);
+                setTimeout(esconderResultado, 800);
                 errou = false;
                 break;
             }
         }
         if (errou == true){
-            alert("Você ERROU!!")
-        }
+            esconderResultado();
+            esconderErrou();
+            setTimeout(esconderErrou,800);
+            setTimeout(esconderResultado, 800);        }
         palpite.value = "";
         palpite.focus();
     }
@@ -59,4 +90,6 @@ var palpite = document.querySelector("input");
     botaoIr.onclick = verificacao;
     var botaoAtualizar = document.querySelector("button#atualizar");
     botaoAtualizar.onclick = resortear;
+
+    
 

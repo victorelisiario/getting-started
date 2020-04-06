@@ -45,6 +45,35 @@ input {
     display: flex;
 }
 
+#buttons input {
+    padding: 30px;
+}
+
+#inicio {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+a#inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 120px;
+    width: 500px;
+    margin-top: 20px;
+
+    background: #443F3F;
+    border-radius: 16px;  
+
+    color: write;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none ;
+}
+
 button {
     width: 250px;
     height: 120px;
@@ -76,4 +105,88 @@ img {
 button:hover{
     background:  rgb(129, 121, 121);
 
+}
+a#inicio:hover{
+    background:  rgb(129, 121, 121);
+
+}
+
+a#titulo {
+    font-weight: bold;
+    line-height: 70px;
+    text-decoration: none;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.62);
+}
+
+a#titulo:hover {
+    color: rgb(129, 121, 121);
+    background-color: none;
+}
+.canvas {
+    display: grid;
+    justify-content: center;
+}
+
+.resultado {
+    width: 500px;
+    height: 120px;
+    background-color: #C4C4C4;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.acertou {
+    width: 500px;
+    height: 120px;
+    background-color: #477D46;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+.errou {
+    width: 500px;
+    height: 120px;
+    background-color: #B65555;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.hide {
+    display: none;
 }
