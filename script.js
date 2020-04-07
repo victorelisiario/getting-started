@@ -1,7 +1,6 @@
     var palpite = document.querySelector("input");
     var numerosSecretos = [];
-
-
+    
     // FUNCOES PARA ESCONDER A ABA DE RESPOSTA
     function esconderResultado () {
         document
@@ -31,11 +30,6 @@
             .toggle("hide")
     }
 
-    function enfase (){
-        palpite.value = "";
-        palpite.focus();
-    }
-
     function esconderInput () {
         document
             .querySelector(".input")
@@ -43,9 +37,22 @@
             .toggle("hide")
     }
 
+    function esconderEasterEgg () {
+        document
+            .querySelector(".easter")
+            .classList
+            .toggle("hide")
+    }
+
+    function enfase (){
+        palpite.value = "";
+        palpite.focus();
+    }
+
     esconderAcertou();
     esconderErrou();
     esconderInvalido();
+    esconderEasterEgg();
 
             // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
     function sorteiaNumeros(){
@@ -75,40 +82,57 @@
  
             // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
     function verificacao () {
-      
-        if (isNaN(palpite)){
-            if (palpite.value > 0 && palpite.value < 11) {
+        var senha = palpite.value.toUpperCase();
+       
+        if ((senha == "MIGUEL")) {
 
-                var errou = true;
-                for (contador = 0; contador < 5; contador++) {
-                    if (palpite.value == numerosSecretos[contador]){
-                        esconderResultado();
-                        esconderAcertou();
-                        setTimeout(esconderAcertou, 800);
-                        setTimeout(esconderResultado, 800);
-                        errou = false;
-                        break;
+            esconderResultado();
+            esconderEasterEgg();
+            setTimeout(esconderResultado, 400);
+            setTimeout(esconderEasterEgg, 400);
+
+            setTimeout(esconderResultado, 800);
+            setTimeout(esconderEasterEgg, 800);
+            setTimeout(esconderResultado, 1200);
+            setTimeout(esconderEasterEgg, 1200);
+
+            setTimeout(enfase, 1200);
+
+        } else {
+            if (isNaN(palpite)){
+                if (palpite.value > 0 && palpite.value < 11) {
+
+                    var errou = true;
+                    for (contador = 0; contador < 5; contador++) {
+                        if (palpite.value == numerosSecretos[contador]){
+                            esconderResultado();
+                            esconderAcertou();
+                            setTimeout(esconderAcertou, 800);
+                            setTimeout(esconderResultado, 800);
+                            errou = false;
+                            break;
+                        }
                     }
-                }
+                    
+                    if (errou == true) {
+                        esconderResultado();
+                        esconderErrou();
+                        setTimeout(esconderErrou,800);
+                        setTimeout(esconderResultado, 800);   
+                    }
+
+
+                    palpite.value = "";
+                    palpite.focus();  
                 
-                if (errou == true) {
-                    esconderResultado();
-                    esconderErrou();
-                    setTimeout(esconderErrou,800);
-                    setTimeout(esconderResultado, 800);   
-                }
-
-
-                palpite.value = "";
-                palpite.focus();  
-            
-            } else {
-                esconderInput();
-                esconderInvalido();
-                setTimeout(esconderInput, 800);
-                setTimeout(esconderInvalido, 800);
-                setTimeout(enfase, 800);
-            }               
+                } else {
+                    esconderInput();
+                    esconderInvalido();
+                    setTimeout(esconderInput, 800);
+                    setTimeout(esconderInvalido, 800);
+                    setTimeout(enfase, 800);
+                }               
+            }
         }
     }
         
@@ -130,3 +154,4 @@
 
 
     
+
