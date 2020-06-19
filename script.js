@@ -59,18 +59,18 @@
 
         var contadorInclui = 0;
        
-        while (contadorInclui < 5) {
+        while (contadorInclui < 2) {
             var numerotemp = Math.round(Math.random() * 10);
             var existe = false;
 
-            for ( var contadorTesta = 0; contadorTesta < 5; contadorTesta++){
+            for ( var contadorTesta = 0; contadorTesta < 2; contadorTesta++){
                 if (numerotemp == numerosSecretos[contadorTesta]) {
                     existe = true;
                     break;
                 }
             }
             
-            if ((existe == false) && (numerotemp != 0)) {
+            if ((existe == false) && (numerotemp < 10)) {
                 numerosSecretos.push(numerotemp);
                 contadorInclui++;
             }
@@ -100,7 +100,7 @@
 
         } else {
             if (isNaN(palpite)){
-                if (palpite.value > 0 && palpite.value < 11) {
+                if (palpite.value >= 0 && palpite.value < 10) {
 
                     var errou = true;
                     for (contador = 0; contador < 5; contador++) {
