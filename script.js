@@ -103,7 +103,7 @@
                 if (palpite.value >= 0 && palpite.value < 10) {
 
                     var errou = true;
-                    for (contador = 0; contador < 5; contador++) {
+                    for (contador = 0; contador < 2; contador++) {
                         if (palpite.value == numerosSecretos[contador]){
                             esconderResultado();
                             esconderAcertou();
