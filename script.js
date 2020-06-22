@@ -84,7 +84,7 @@
     function verificacao () {
         var senha = palpite.value.toUpperCase();
        
-        if ((senha == "MIGUEL")) {
+        if ((senha == "AFTER ALL THIS TIME?")) {
 
             esconderResultado();
             esconderEasterEgg();
