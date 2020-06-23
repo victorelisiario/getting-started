@@ -1,7 +1,6 @@
     var palpite = document.querySelector("input");
     var numerosSecretos = [];
     
-    // FUNCOES PARA ESCONDER A ABA DE RESPOSTA
     function esconderResultado () {
         document
             .querySelector(".resultado")
@@ -54,7 +53,6 @@
     esconderInvalido();
     esconderEasterEgg();
 
-            // FUNCAO PARA ESCOLHER OS NUMEROS ADIVINHADOS
     function sorteiaNumeros(){
 
         var contadorInclui = 0;
@@ -75,12 +73,8 @@
                 contadorInclui++;
             }
         }
-
-        console.log(numerosSecretos);
-
     }
  
-            // FUNCAO PARA VERIFICAR SE VOCE GANHOU OU NAO
     function verificacao () {
         var senha = palpite.value.toUpperCase();
        
@@ -135,15 +129,13 @@
             }
         }
     }
-        
-
-        // FUNCAO PARA ESCOLHER OS NUMEROS NOVAMENTE
-        function resortear () {
+       
+    function resortear () {
             numerosSecretos = [];
             sorteiaNumeros();
             
             enfase();
-        }
+    }
 
     palpite.focus();
     sorteiaNumeros()
