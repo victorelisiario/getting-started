@@ -17,7 +17,6 @@ body {
 
     max-width: 550px;
     background: #E9E3E3;
-
 }
 
 h1 {
@@ -106,6 +105,7 @@ button:hover{
     background:  rgb(129, 121, 121);
 
 }
+
 a#inicio:hover{
     background:  rgb(129, 121, 121);
 
@@ -123,6 +123,7 @@ a#titulo:hover {
     color: rgb(129, 121, 121);
     background-color: none;
 }
+
 .canvas {
     display: grid;
     justify-content: center;
@@ -134,7 +135,7 @@ a#titulo:hover {
     background-color: #C4C4C4;
     border-radius: 8px;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 0;
     margin-right: 0;
 
@@ -148,7 +149,7 @@ a#titulo:hover {
     align-self: center;
 }
 
-.invalido {
+.invalido, .errou {
     width: 500px;
     height: 120px;
     background-color: #B65555;
@@ -168,33 +169,13 @@ a#titulo:hover {
     align-self: center;
 }
 
-.acertou {
+.acertou, .easter {
     width: 500px;
     height: 120px;
     background-color: #477D46;
     border-radius: 8px;
     margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 0;
-    margin-right: 0;
-
-    font-size: 60px;
-    color: white;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-}
-
-.errou {
-    width: 500px;
-    height: 120px;
-    background-color: #B65555;
-    border-radius: 8px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 0;
     margin-right: 0;
 
@@ -214,25 +195,6 @@ a#titulo:hover {
 
 .infobotton {
     margin: 0 30px 0 0;
-}
-.easter {
-    width: 500px;
-    height: 120px;
-    background-color: #477D46;
-    border-radius: 8px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 0;
-    margin-right: 0;
-
-    font-size: 60px;
-    color: white;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
 }
 
 .hide {

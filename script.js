@@ -82,15 +82,15 @@
 
             esconderResultado();
             esconderEasterEgg();
-            setTimeout(esconderResultado, 400);
             setTimeout(esconderEasterEgg, 400);
+            setTimeout(esconderResultado, 410);
 
             setTimeout(esconderResultado, 800);
-            setTimeout(esconderEasterEgg, 800);
-            setTimeout(esconderResultado, 1200);
+            setTimeout(esconderEasterEgg, 810);
             setTimeout(esconderEasterEgg, 1200);
+            setTimeout(esconderResultado, 1210);
 
-            setTimeout(enfase, 1200);
+            setTimeout(enfase, 1210);
 
         } else {
             if (isNaN(palpite)){
@@ -102,7 +102,7 @@
                             esconderResultado();
                             esconderAcertou();
                             setTimeout(esconderAcertou, 800);
-                            setTimeout(esconderResultado, 800);
+                            setTimeout(esconderResultado, 810);
                             errou = false;
                             break;
                         }
@@ -112,7 +112,7 @@
                         esconderResultado();
                         esconderErrou();
                         setTimeout(esconderErrou,800);
-                        setTimeout(esconderResultado, 800);   
+                        setTimeout(esconderResultado, 810);   
                     }
 
 
@@ -122,9 +122,9 @@
                 } else {
                     esconderInput();
                     esconderInvalido();
-                    setTimeout(esconderInput, 800);
                     setTimeout(esconderInvalido, 800);
-                    setTimeout(enfase, 800);
+                    setTimeout(esconderInput, 810);
+                    setTimeout(enfase, 810);
                 }               
             }
         }
